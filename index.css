@@ -30,9 +30,9 @@ p {
 body {
   background-color: var(--clr-veryDarkBlue);
   background-image: url(./images/pattern-hills.svg);
-  background-repeat: no-repeat;
+  background-repeat:no-repeat;
   background-position: bottom;
-  background-size: contain;
+  background-size:contain;
   width: 100vw;
   height: 100vh;
   font-family: 'Red Hat Text', sans-serif;
@@ -51,7 +51,7 @@ body {
   background-position: top;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content:space-around; */
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -61,10 +61,13 @@ section {
   /* height: 100vh; 
   width: 100%; */
   text-align: center;
+    position: absolute;
+  top: 20%;
 }
 
 .timer {
   display: flex;
+  justify-content: center;
 }
 .timer-container {
   position: relative;
@@ -137,7 +140,7 @@ z-index:2;
   border-top-right-radius: 8px;
   box-shadow: 0px 10px var(--clr-veryDarkMostlyBlackBlue);
   overflow:hidden;
-  transition: all 1s;
+  transition: all 1s ease-out;
 }
 
 
@@ -165,6 +168,8 @@ z-index:2;
 
 
 footer {
+  position: absolute;
+  bottom:5%;
   text-align: center;
   /* margin-top:20rem; */
 }
@@ -176,14 +181,18 @@ footer img:hover {
     /* background-color: var(--clr-softRed); */
  
 }
+.attribution {
+  margin-top: 0.5rem;
+}
 
 /* - Mobile: 375px
 - Desktop: 1440px */
 
-@media(max-width: 575px) {
+@media(max-width: 700px) {
 body {
-  background-size: cover;
+  background-size: auto;
 }
+
 h1 {
     margin-bottom:4rem;
 }
@@ -209,4 +218,5 @@ h1 {
 span {
   font-size: 2.5rem;
 }
-}ff
+
+}
