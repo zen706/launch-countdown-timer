@@ -11,7 +11,6 @@ const bottomRects = [...document.querySelectorAll('.bottomRect')]
 const topNums = [...document.querySelectorAll('.top-num')]
 const bottomNums = [...document.querySelectorAll('.bottom-num')]
 
-
 const tempDate = new Date()
 const tempFullYear = tempDate.getFullYear()
 const tempMonth = tempDate.getMonth()
@@ -23,9 +22,9 @@ const tempSeconds = tempDate.getSeconds()
 const futureDate = new Date(
   tempFullYear,
   tempMonth,
-  tempDays + 14,
-  tempHours + 1,
-  tempMinutes +1,
+  tempDays+14,
+  tempHours +1,
+  tempMinutes+1,
   tempSeconds + 5
 )
 
@@ -59,6 +58,12 @@ const getRemainingTime = () => {
   //  hoursEl.innerHTML = hours < 10 ? `0${hours}` : hours
   //  minutesEl.innerHTML = minutes < 10 ? `0${minutes}` : minutes
   //  secondsEl.innerHTML = seconds < 10 ? `0${seconds}` : seconds
+
+  if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+    clearInterval(interval)
+    return
+  }
+
   if (hours === 0 && minutes === 0 && seconds === 0) {
     toggleFlip(0)
     toggleFlip(1)
@@ -74,15 +79,9 @@ const getRemainingTime = () => {
   } else if (seconds !== 0) {
     toggleFlip(3)
   }
-
-  if (deltaTime < 0) {
-    clearInterval(interval)
-  }
 }
 
 function toggleFlip(index) {
-//   topRects[index].classList.toggle('flip')
-//   bottomRects[index].classList.toggle('flip')
   setTimeout(() => {
     topRects[index].classList.toggle('flip')
     bottomRects[index].classList.toggle('flip')
